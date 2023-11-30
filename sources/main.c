@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:47:22 by mloureir          #+#    #+#             */
-/*   Updated: 2023/11/30 17:06:38 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/11/30 17:13:27 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ int main(int argc, char **argv)
 	t_stack *start_a;
 	t_stack *start_b;
 
-	if (argc < 2)
+	if (argc < 2 || ft_errorcheck(argc, argv) == 0)
 		return (0);
-
 	start_a = ft_add_node(ft_atoi(argv[1]));
 	start_b = NULL;
 	if (argc > 2)
