@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:22:07 by mloureir          #+#    #+#             */
-/*   Updated: 2023/11/30 13:47:02 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/11/30 16:58:29 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 void    swap_a(t_stack **stack_a)
 {
-	t_stack	*temp;
+	t_stack *temp;
+	t_stack *next;
 
-	temp = (*stack_a)->next->next;
-	if (temp)
-		temp->prev = *stack_a;
+	temp = *stack_a;
+	next = (*stack_a)->next->next;
 	*stack_a = (*stack_a)->next;
-	(*stack_a)->next = (*stack_a)->prev;
-	(*stack_a)->next->next = temp;
-	(*stack_a)->next->prev = *stack_a;
-	(*stack_a)->prev = NULL;
+	(*stack_a)->next = temp;
+	(*stack_a)->next->next = next;
 }
 
 void    swap_b(t_stack **stack_b)
 {
-	t_stack	*temp;
+	t_stack *temp;
+	t_stack *next;
 
-	temp = (*stack_b)->next->next;
-	if (temp)
-		temp->prev = *stack_b;
+	temp = *stack_b;
+	next = (*stack_b)->next->next;
 	*stack_b = (*stack_b)->next;
-	(*stack_b)->next = (*stack_b)->prev;
-	(*stack_b)->next->next = temp;
-	(*stack_b)->next->prev = *stack_b;
-	(*stack_b)->prev = NULL;
+	(*stack_b)->next = temp;
+	(*stack_b)->next->next = next;
 }
