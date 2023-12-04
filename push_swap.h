@@ -30,6 +30,7 @@ t_stack	*ft_add_node(int num);
 
 /* Operations Stack A */
 void    swap_a(t_stack **stack_a);
+void	push_a(t_stack **stack_a);
 
 /* Operations Stack B */
 void	swap_b(t_stack **stack_b);
