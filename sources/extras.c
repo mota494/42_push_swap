@@ -6,26 +6,33 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/04 11:46:28 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:39:21 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_printstack(t_stack *head)
+void	ft_printstack(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	*temp;
+	t_stack	*tempA;
+	t_stack *tempB;
 
-	temp = head;
-	ft_printf("\n[ PRINT STACK ]\n\n");
-	while (temp)
+	tempA = stack_a;
+	ft_printf("\n[Stack A:]\n");
+	while (tempA)
 	{
-		ft_printf("[ %p ]\n", temp);
-		ft_printf("Num: %d\n", temp->content);
-		ft_printf("Next: %p\n", temp->next);
-		ft_printf("_________________\n");
-		temp = temp->next;
+		ft_printf(" ([%p] %d) ->", tempA, tempA->content);
+		tempA = tempA->next;
 	}
+	ft_printf("%p", tempA);
+	tempB = stack_b;
+	ft_printf("\n\n[Stack B:]\n");
+	while (tempB)
+	{
+		ft_printf(" ([%p] %d) ->", tempB, tempB->content);
+		tempB = tempB->next;
+	}
+	ft_printf("%p", tempB);
 }
 
 void	ft_printnode(t_stack *node)
@@ -35,31 +42,4 @@ void	ft_printnode(t_stack *node)
 	ft_printf("Num: %d\n", node->content);
 	ft_printf("Next: %p\n", node->next);
 	ft_printf("_________________\n");
-}
-
-int	ft_errorcheck(int argc, char **argv)
-{
-	int	i;
-	int	y;
-	int	checker;
-
-	i = 1;
-	while (i < argc)
-	{
-		checker = 0;
-		y = 1;
-		while (y < argc)
-		{
-			if (ft_atoi(argv[y]) == ft_atoi(argv[i]))
-				checker++;
-			if (checker > 1)
-			{
-				ft_printf("!ERROR!");
-				return (0);
-			}
-			y++;
-		}
-		i++;
-	}
-	return (1);
 }

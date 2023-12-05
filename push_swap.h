@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/04 16:07:01 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/05 10:31:46 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,13 @@ void	swap_ss(t_stack **stack_b, t_stack **stack_a);
 void	rotate_rr(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rrr(t_stack **stack_a, t_stack **stack_b);
 
+/* Error checks */
+int		ft_doublenumber(int argc, char **argv);
+int		ft_checker(int argc, char **argv);
+int		ft_alldigit(int argc, char **argv);
+
 /* Extras */
-void	ft_printstack(t_stack *head);
+void	ft_printstack(t_stack *stack_a, t_stack *stack_b);
 void	ft_printnode(t_stack *node);
-int		ft_errorcheck(int argc, char **argv);
 
 #endif
