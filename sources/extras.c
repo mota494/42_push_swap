@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/11/30 17:17:41 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:46:28 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	ft_printstack(t_stack *head)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = head;
 	ft_printf("\n[ PRINT STACK ]\n\n");
-	 while(temp)
-	 {
-		 ft_printf("[ %p ]\n", temp);
-		 ft_printf("Num: %d\n", temp->content);
-		 ft_printf("Next: %p\n", temp->next);
-		 ft_printf("_________________\n");
-		 temp = temp->next;
-	 }
+	while (temp)
+	{
+		ft_printf("[ %p ]\n", temp);
+		ft_printf("Num: %d\n", temp->content);
+		ft_printf("Next: %p\n", temp->next);
+		ft_printf("_________________\n");
+		temp = temp->next;
+	}
 }
 
 void	ft_printnode(t_stack *node)
@@ -39,26 +39,26 @@ void	ft_printnode(t_stack *node)
 
 int	ft_errorcheck(int argc, char **argv)
 {
-	int i;
-	int y;
-	int checker;
+	int	i;
+	int	y;
+	int	checker;
 
 	i = 1;
-	while(i < argc)
+	while (i < argc)
 	{
 		checker = 0;
 		y = 1;
-			while(y < argc)
+		while (y < argc)
+		{
+			if (ft_atoi(argv[y]) == ft_atoi(argv[i]))
+				checker++;
+			if (checker > 1)
 			{
-				if(ft_atoi(argv[y]) == ft_atoi(argv[i]))
-					checker++;
-				if(checker > 1)
-				{
-					ft_printf("!ERROR!");
-					return (0);
-				}
-				y++;
+				ft_printf("!ERROR!");
+				return (0);
 			}
+			y++;
+		}
 		i++;
 	}
 	return (1);

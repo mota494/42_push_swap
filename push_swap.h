@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/11/30 17:07:40 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/04 16:07:01 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,21 @@ void	ft_populate_list(t_stack **head, int argc, char **argv);
 t_stack	*ft_add_node(int num);
 
 /* Operations Stack A */
-void    swap_a(t_stack **stack_a);
-void	push_a(t_stack **stack_a);
+void	swap_a(t_stack **stack_a);
+void	rotate_a(t_stack **stack_a);
+void	reverse_rra(t_stack **stack_a);
+void	push_a(t_stack **stack_a, t_stack **stack_b);
 
 /* Operations Stack B */
 void	swap_b(t_stack **stack_b);
+void	rotate_b(t_stack **stack_b);
+void	reverse_rrb(t_stack **stack_b);
+void	push_b(t_stack **stack_a, t_stack **stack_b);
+
+/* Operations both stacks */
+void	swap_ss(t_stack **stack_b, t_stack **stack_a);
+void	rotate_rr(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /* Extras */
 void	ft_printstack(t_stack *head);

@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:51:19 by mloureir          #+#    #+#             */
-/*   Updated: 2023/11/30 16:54:39 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:44:24 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_stack	*ft_add_node(int num)
 {
-	t_stack *new_node;
+	t_stack	*new_node;
 
 	new_node = malloc(sizeof(t_stack));
-	if(!new_node)
-		return NULL;
+	if (!new_node)
+		return (NULL);
 	new_node->content = num;
 	new_node->next = NULL;
 	return (new_node);
@@ -26,14 +26,14 @@ t_stack	*ft_add_node(int num)
 
 void	ft_populate_list(t_stack **head, int argc, char **argv)
 {
-	t_stack *temp;
+	t_stack	*temp;
 	int		i;
 
 	temp = *head;
 	i = 2;
-	while(i < argc)
+	while (i < argc)
 	{
-		while(temp->next)
+		while (temp->next)
 		{
 			temp = temp->next;
 		}

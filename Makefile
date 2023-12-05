@@ -3,7 +3,7 @@ CC = cc
 FLAGS =  -Wall -Wextra -Werror
 LIBFT = include/libft/libft.a
 PRINTF = include/ft_printf/libftprintf.a
-SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_a.c
+SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_1.c
 RM = rm -rf
 OBJ = $(SRC:.c=.o)
 
