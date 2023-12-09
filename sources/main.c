@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:47:22 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/05 10:43:05 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/05 13:50:53 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(int argc, char **argv)
 	start_b = NULL;
 	if (argc > 2)
 		ft_populate_list(&start_a, argc, argv);
+	mainsort(&start_a, &start_b);
 	return (0);
 }

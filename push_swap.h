@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/05 10:31:46 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:47:07 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ typedef struct s_stack
 /* List functions */
 void	ft_populate_list(t_stack **head, int argc, char **argv);
 t_stack	*ft_add_node(int num);
+int		ft_get_node_index(t_stack **stack, int num);
+int		ft_get_num_elems(t_stack **stack);
+int		ft_get_num_index(t_stack **stack, int num);
 
 /* Operations Stack A */
 void	swap_a(t_stack **stack_a);
@@ -49,9 +52,14 @@ void	reverse_rrr(t_stack **stack_a, t_stack **stack_b);
 int		ft_doublenumber(int argc, char **argv);
 int		ft_checker(int argc, char **argv);
 int		ft_alldigit(int argc, char **argv);
+int		already_sort(int argc, char **argv);
+
+/* Algorithm */
+void	mainsort(t_stack **stack_a, t_stack **stack_b);
+void	ft_set_max_last(t_stack **stack_a, int maxindex);
 
 /* Extras */
-void	ft_printstack(t_stack *stack_a, t_stack *stack_b);
+void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
 void	ft_printnode(t_stack *node);
 
 #endif
