@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:01 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/06 15:47:38 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/09 10:44:35 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	get_max(t_stack **stack_a)
 
 void	ft_set_max_last(t_stack **stack_a, int maxindex)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(i < maxindex)
+	while (i < maxindex)
 	{
 		reverse_rra(stack_a);
 		i++;
