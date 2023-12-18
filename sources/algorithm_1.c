@@ -6,46 +6,44 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:01 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/09 10:44:35 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:50:47 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	get_max(t_stack **stack_a)
+int get_medium(t_stack **stack_a)
 {
-	int		max;
-	t_stack	*temp;
+	int medium;
+	int count;
+	t_stack *temp;
 
 	temp = *stack_a;
-	max = 0;
+	count = 0;
+	medium = 0;
 	while (temp)
 	{
-		if (max < temp->content)
-			max = temp->content;
+		medium += temp->content;
+		count++;
 		temp = temp->next;
 	}
-	return (max);
+	medium /= count;
+	return (medium);
 }
 
-void	ft_set_max_last(t_stack **stack_a, int maxindex)
+void	bellow_med(t_stack **stack_a, t_stack **stack_b, int medium)
 {
-	int	i;
+	t_stack *temp;
 
-	i = 0;
-	while (i < maxindex)
+	temp = *stack_a;
+	while(temp)
 	{
-		reverse_rra(stack_a);
-		i++;
+
 	}
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
-	int	max;
-
-	max = get_max(stack_a);
-	if (ft_get_num_index(stack_a, max) != ft_get_num_elems(stack_a))
-		ft_set_max_last(stack_a, ft_get_num_index(stack_a, max));
-	ft_printstack(stack_a, stack_b);
+	bellow_med(stack_a, stack_b, get_medium(stack_a));
+	ft_print_visualize(stack_b);
 }

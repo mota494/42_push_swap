@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/06 15:47:07 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:31:39 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ int		already_sort(int argc, char **argv);
 
 /* Algorithm */
 void	mainsort(t_stack **stack_a, t_stack **stack_b);
-void	ft_set_max_last(t_stack **stack_a, int maxindex);
+int		get_medium(t_stack **stack_a);
+void	bellow_med(t_stack **stack_a, t_stack **stack_b, int medium);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
 void	ft_printnode(t_stack *node);
+void	ft_print_visualize(t_stack **stack);
 
 #endif
