@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:51:19 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/09 10:44:46 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:26:26 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ void	ft_populate_list(t_stack **head, int argc, char **argv)
 	}
 }
 
-int	ft_get_node_index(t_stack **stack, int num)
+int	ft_node_index(t_stack **stack, int num)
 {
 	int		count;
 	t_stack	*temp;
 
 	temp = *stack;
-	count = 0;
+	count = 1;
 	while (temp)
 	{
 		if (temp->content == num)
@@ -59,7 +59,7 @@ int	ft_get_node_index(t_stack **stack, int num)
 	return (count);
 }
 
-int	ft_get_num_elems(t_stack **stack)
+int	ft_num_elems(t_stack **stack)
 {
 	int		count;
 	t_stack	*temp;

@@ -6,44 +6,45 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:01 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/18 16:50:47 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/19 11:11:01 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int get_medium(t_stack **stack_a)
+int	ft_check_sort(t_stack **stack_a)
 {
-	int medium;
-	int count;
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack_a;
-	count = 0;
-	medium = 0;
-	while (temp)
+	while (temp->next)
 	{
-		medium += temp->content;
-		count++;
+		if (temp->content > temp->next->content)
+			return (0);
 		temp = temp->next;
 	}
-	medium /= count;
-	return (medium);
+	return (1);
 }
 
-void	bellow_med(t_stack **stack_a, t_stack **stack_b, int medium)
+void	ft_sort_three(t_stack **stack_a)
 {
-	t_stack *temp;
-
-	temp = *stack_a;
-	while(temp)
+	if (ft_num_elems(stack_a) == ft_node_index(stack_a, max_num(stack_a)))
 	{
-
+		swap_a(stack_a);
+		return ;
 	}
+	while (ft_num_elems(stack_a) != ft_node_index(stack_a, max_num(stack_a)))
+		reverse_rra(stack_a);
+	if (ft_check_sort(stack_a) == 0)
+		swap_a(stack_a);
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
-	bellow_med(stack_a, stack_b, get_medium(stack_a));
-	ft_print_visualize(stack_b);
+	if (ft_num_elems(stack_a) <= 3)
+	{
+		ft_sort_three(stack_a);
+		ft_print_visualize(stack_a);
+		return ;
+	}
 }
