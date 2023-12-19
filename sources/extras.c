@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 11:10:42 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/19 16:29:13 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,24 @@ void	ft_print_visualize(t_stack **stack)
 	while (temp)
 	{
 		i = 1;
-		while (i <= temp->content / i)
-		{
-			ft_printf("█");
-			i++;
-		}
+		ft_printf("|     %d", temp->content);
 		ft_printf("\n");
 		temp = temp->next;
 	}
+	ft_printf("_________\n\n");
+}
+
+int	ft_power(int num, int power)
+{
+	int	toret;
+	int i;
+
+	i = 0;
+	toret = 1;
+	while(i < power)
+	{
+		toret = toret * num;
+		i++;
+	}
+	return (toret);
 }

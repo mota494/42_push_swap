@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 10:19:23 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/19 15:57:27 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,15 @@ int		ft_doublenumber(int argc, char **argv);
 int		ft_checker(int argc, char **argv);
 int		ft_alldigit(int argc, char **argv);
 int		already_sort(int argc, char **argv);
+int		ft_power(int num, int power);
 
 /* Algorithm */
 void	mainsort(t_stack **stack_a, t_stack **stack_b);
+int		ft_check_sort(t_stack **stack_a);
+void	ft_sort_three(t_stack **stack_a);
+int		times_to_it(int num);
+void	ft_send_neg(t_stack **stack_a, t_stack **stack_b);
+void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
