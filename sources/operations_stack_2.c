@@ -16,7 +16,6 @@ void	rotate_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	rotate_a(stack_a);
 	rotate_b(stack_b);
-	ft_printf("rr\n");
 }
 
 void	reverse_rra(t_stack **stack_a)
@@ -65,5 +64,4 @@ void	reverse_rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	reverse_rra(stack_a);
 	reverse_rrb(stack_b);
-	ft_printf("rrr\n");
 }

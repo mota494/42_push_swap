@@ -22,7 +22,7 @@ void	swap_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	(*stack_a)->next = temp;
 	(*stack_a)->next->next = next;
-	ft_printf("sa");
+	ft_printf("sa\n");
 }
 
 void	swap_b(t_stack **stack_b)
@@ -35,14 +35,13 @@ void	swap_b(t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	(*stack_b)->next = temp;
 	(*stack_b)->next->next = next;
-	ft_printf("sb");
+	ft_printf("sb\n");
 }
 
 void	swap_ss(t_stack **stack_b, t_stack **stack_a)
 {
 	swap_a(stack_a);
 	swap_b(stack_b);
-	ft_printf("ss\n");
 }
 
 void	rotate_a(t_stack **stack_a)
@@ -59,7 +58,7 @@ void	rotate_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("ra");
+	ft_printf("ra\n");
 }
 
 void	rotate_b(t_stack **stack_b)
@@ -76,5 +75,5 @@ void	rotate_b(t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("rb");
+	ft_printf("rb\n");
 }

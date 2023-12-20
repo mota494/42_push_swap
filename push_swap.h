@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 15:57:27 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/20 14:10:07 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_stack
 {
 	int				content;
+	int 			box;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -31,6 +32,7 @@ int		ft_node_index(t_stack **stack, int num);
 int		ft_num_elems(t_stack **stack);
 int		ft_get_num_index(t_stack **stack, int num);
 int		max_num(t_stack **stack);
+void	rotate_untill(t_stack **stack, int num);
 
 /* Operations Stack A */
 void	swap_a(t_stack **stack_a);
@@ -67,6 +69,6 @@ void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house);
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
 void	ft_printnode(t_stack *node);
-void	ft_print_visualize(t_stack **stack);
+void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b);
 
 #endif

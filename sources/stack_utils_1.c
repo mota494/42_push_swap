@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:18:53 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 12:01:03 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:43:10 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,24 @@ int times_to_it(int num)
 		count++;
 	}
 	return (count);
+}
+
+void rotate_untill(t_stack **stack, int num) {
+	int pos;
+
+	pos = ft_get_num_index(stack, num);
+	if (pos > ft_num_elems(stack) / 2)
+	{
+		while ((*stack)->content != num)
+		{
+			reverse_rra(stack);
+		}
+	}
+	else
+	{
+		while ((*stack)->content != num)
+		{
+			rotate_a(stack);
+		}
+	}
 }

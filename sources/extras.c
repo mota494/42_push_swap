@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 16:29:13 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:03:34 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,21 +44,26 @@ void	ft_printnode(t_stack *node)
 	ft_printf("_________________\n");
 }
 
-void	ft_print_visualize(t_stack **stack)
+void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*temp;
-	int		i;
+	t_stack	*tempa;
+	t_stack	*tempb;
 
-	temp = *stack;
-	ft_printf("\n");
-	while (temp)
+	tempa = *stack_a;
+	tempb = *stack_b;
+	ft_printf("____a\n");
+	while (tempa)
 	{
-		i = 1;
-		ft_printf("|     %d", temp->content);
-		ft_printf("\n");
-		temp = temp->next;
+		ft_printf("|  %d\n", tempa->content);
+		tempa = tempa->next;
 	}
-	ft_printf("_________\n\n");
+	ft_printf("\n");
+	while (tempb)
+	{
+		ft_printf("|  %d\n", tempb->content);
+		tempb = tempb->next;
+	}
+	ft_printf("____b\n");
 }
 
 int	ft_power(int num, int power)

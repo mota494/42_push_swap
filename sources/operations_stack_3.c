@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:00:02 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/18 11:28:28 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/20 12:20:46 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 		*stack_a = temp;
 		(*stack_a)->next = snext;
 	}
+	ft_printf("pa\n");
 }
 
 void	push_b(t_stack **stack_a, t_stack **stack_b)
@@ -54,6 +55,7 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 		*stack_b = temp;
 		(*stack_b)->next = snext;
 	}
+	ft_printf("pb\n");
 }
 
 int	get_max(t_stack **stack_a)
