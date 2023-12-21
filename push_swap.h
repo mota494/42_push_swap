@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/20 14:10:07 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:14:48 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	ft_sort_three(t_stack **stack_a);
 int		times_to_it(int num);
 void	ft_send_neg(t_stack **stack_a, t_stack **stack_b);
 void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house);
+void	ft_actual_sort(t_stack **stack_a, t_stack **stack_b);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);

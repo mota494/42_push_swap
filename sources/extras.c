@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/20 12:03:34 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:08:58 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,20 @@ void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 
 	tempa = *stack_a;
 	tempb = *stack_b;
-	ft_printf("____a\n");
+	ft_printf("\n\n[Stack A]\n");
 	while (tempa)
 	{
-		ft_printf("|  %d\n", tempa->content);
+		ft_printf("❨ %d ❩➛", tempa->content);
 		tempa = tempa->next;
 	}
-	ft_printf("\n");
+	ft_printf("❨ NULL ❩\n");
+	ft_printf("[Stack B]\n");
 	while (tempb)
 	{
-		ft_printf("|  %d\n", tempb->content);
+		ft_printf("❨ %d ❩➛", tempb->content);
 		tempb = tempb->next;
 	}
-	ft_printf("____b\n");
+	ft_printf("❨ NULL ❩");
 }
 
 int	ft_power(int num, int power)
@@ -73,7 +74,9 @@ int	ft_power(int num, int power)
 
 	i = 0;
 	toret = 1;
-	while(i < power)
+	if (power == 0)
+		return (1);
+	while (i < power)
 	{
 		toret = toret * num;
 		i++;

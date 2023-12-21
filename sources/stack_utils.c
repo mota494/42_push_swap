@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:51:19 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/19 10:26:26 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/21 10:14:02 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*ft_add_node(int num)
 	if (!new_node)
 		return (NULL);
 	new_node->content = num;
+	new_node->box = 0;
 	new_node->next = NULL;
 	return (new_node);
 }

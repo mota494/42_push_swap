@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 12:49:01 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/20 14:02:17 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/21 13:12:15 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house)
 
 	temp = *stack_a;
 	togetmod = ft_power(10, house);
+	while (temp)
+	{
+		temp->box = temp->content % togetmod / (togetmod / 10);
+		temp = temp->next;
+	}
+	ft_actual_sort(stack_a, stack_b);
 }
 
 void	ft_send_neg(t_stack **stack_a, t_stack **stack_b)
@@ -69,11 +75,20 @@ void	ft_send_neg(t_stack **stack_a, t_stack **stack_b)
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
+	int i;
+	int max;
+
+	i = 1;
+	max = times_to_it(max_num(stack_a));
 	if (ft_num_elems(stack_a) <= 3)
 	{
 		ft_sort_three(stack_a);
 		return ;
 	}
 	ft_send_neg(stack_a, stack_b);
-	ft_house_it(stack_a, stack_b, 2);
+	while(i <= max)
+	{
+		ft_house_it(stack_a, stack_b, i);
+		i++;
+	}
 }
