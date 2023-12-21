@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 09:37:41 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/21 14:34:09 by mloureir         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:09:39 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,9 @@ void ft_actual_sort(t_stack **stack_a, t_stack **stack_b)
 			{
 				push_b(stack_a, stack_b);
 				reverse_rra(stack_a);
-				ft_print_visualize(stack_a, stack_b);
 			}
 			else if((*stack_a)->box <= (*stack_a)->next->box)
-			{
 				reverse_rra(stack_a);
-				ft_print_visualize(stack_a, stack_b);
-			}
 		}
 		if (*stack_b)
 		{
@@ -50,8 +46,8 @@ void ft_actual_sort(t_stack **stack_a, t_stack **stack_b)
 			{
 				push_a(stack_a, stack_b);
 				reverse_rra(stack_a);
-				ft_print_visualize(stack_a, stack_b);
 			}
 		}
+		reverse_rra(stack_a);
 	}
 }
