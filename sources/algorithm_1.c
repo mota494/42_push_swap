@@ -39,56 +39,11 @@ void	ft_sort_three(t_stack **stack_a)
 		swap_a(stack_a);
 }
 
-void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house)
-{
-	int togetmod;
-	t_stack *temp;
-
-	temp = *stack_a;
-	togetmod = ft_power(10, house);
-	while (temp)
-	{
-		temp->box = temp->content % togetmod / (togetmod / 10);
-		temp = temp->next;
-	}
-	ft_actual_sort(stack_a, stack_b);
-}
-
-void	ft_send_neg(t_stack **stack_a, t_stack **stack_b)
-{
-	t_stack	*temp;
-
-	temp = *stack_a;
-	while(temp)
-	{
-		if (temp->content < 0)
-		{
-			rotate_untill(stack_a, temp->content);
-			(*stack_a)->content = (*stack_a)->content * -1;
-			push_b(stack_a, stack_b);
-			temp = *stack_a;
-		}
-		else
-			temp = temp->next;
-	}
-}
-
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
-	int i;
-	int max;
-
-	i = 1;
-	max = times_to_it(max_num(stack_a));
 	if (ft_num_elems(stack_a) <= 3)
 	{
 		ft_sort_three(stack_a);
 		return ;
-	}
-	ft_send_neg(stack_a, stack_b);
-	while(i <= max)
-	{
-		ft_house_it(stack_a, stack_b, i);
-		i++;
 	}
 }

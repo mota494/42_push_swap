@@ -17,8 +17,15 @@ $(LIBFT):
 
 $(PRINTF):
 	make -C include/ft_printf
+clean:
+	$RM ($OBJ)
+	make -C include/ft_printf clean
+	make -C include/libft clean
 
-fclean:
-	$(RM) $(OBJ) $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 	make -C include/ft_printf fclean
 	make -C include/libft fclean
+
+re:
+	fclean all
