@@ -20,7 +20,6 @@ t_stack	*ft_add_node(int num)
 	if (!new_node)
 		return (NULL);
 	new_node->content = num;
-	new_node->box = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -43,23 +42,6 @@ void	ft_populate_list(t_stack **head, int argc, char **argv)
 	}
 }
 
-int	ft_node_index(t_stack **stack, int num)
-{
-	int		count;
-	t_stack	*temp;
-
-	temp = *stack;
-	count = 1;
-	while (temp)
-	{
-		if (temp->content == num)
-			return (count);
-		temp = temp->next;
-		count++;
-	}
-	return (count);
-}
-
 int	ft_num_elems(t_stack **stack)
 {
 	int		count;
@@ -75,7 +57,8 @@ int	ft_num_elems(t_stack **stack)
 	return (count);
 }
 
-int	ft_get_num_index(t_stack **stack, int num)
+
+int	ft_node_index(t_stack **stack, int num)
 {
 	int		count;
 	t_stack	*temp;

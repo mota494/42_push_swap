@@ -39,11 +39,32 @@ void	ft_sort_three(t_stack **stack_a)
 		swap_a(stack_a);
 }
 
+void	get_targets(t_stack **stack_a, t_stack **stack_b)
+{
+	push_b(stack_a, stack_b);
+	push_b(stack_a, stack_b);
+		 
+}
+
+void	turk_algo(t_stack **stack_a, t_stack **stack_b)
+{
+	get_targets(stack_a, stack_b);
+}
+
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_num_elems(stack_a) <= 3)
+	if (ft_num_elems(stack_a) == 3)
 	{
 		ft_sort_three(stack_a);
 		return ;
+	}
+	else if (ft_num_elems(stack_a) == 2)
+	{
+		rotate_a(stack_a);
+		return ;
+	}
+	else
+	{
+		turk_algo(stack_a, stack_b);
 	}
 }

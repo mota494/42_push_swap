@@ -20,19 +20,18 @@
 
 typedef struct s_stack
 {
-	int				content;
-	int 			box;
+	long				content;
+	long				target;
+	long				cost;
 	struct s_stack	*next;
 }					t_stack;
 
 /* List functions */
 void	ft_populate_list(t_stack **head, int argc, char **argv);
 t_stack	*ft_add_node(int num);
-int		ft_node_index(t_stack **stack, int num);
 int		ft_num_elems(t_stack **stack);
-int		ft_get_num_index(t_stack **stack, int num);
 int		max_num(t_stack **stack);
-void	rotate_untill(t_stack **stack, int num);
+int		ft_node_index(t_stack **stack, int num);
 
 /* Operations Stack A */
 void	swap_a(t_stack **stack_a);
@@ -62,10 +61,8 @@ int		ft_power(int num, int power);
 void	mainsort(t_stack **stack_a, t_stack **stack_b);
 int		ft_check_sort(t_stack **stack_a);
 void	ft_sort_three(t_stack **stack_a);
-int		times_to_it(int num);
-void	ft_send_neg(t_stack **stack_a, t_stack **stack_b);
-void	ft_house_it(t_stack **stack_a, t_stack **stack_b, int house);
-void	ft_actual_sort(t_stack **stack_a, t_stack **stack_b);
+void	get_targets(t_stack **stack_a, t_stack **stack_b);	
+void	turk_algo(t_stack **stack_a, t_stack **stack_b);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
