@@ -12,9 +12,9 @@
 
 #include "../push_swap.h"
 
-int	max_num(t_stack **stack)
+long	max_num(t_stack **stack)
 {
-	int	max;
+	long	max;
 	t_stack	*temp;
 
 	max = 0;
@@ -28,9 +28,9 @@ int	max_num(t_stack **stack)
 	return (max);
 }
 
-int	min_num(t_stack **stack)
+long	min_num(t_stack **stack)
 {
-	int	min;
+	long	min;
 	t_stack	*temp;
 
 	min = 0;

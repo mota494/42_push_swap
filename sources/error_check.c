@@ -40,7 +40,7 @@ int	ft_checker(int argc, char **argv)
 int	already_sort(int argc, char **argv)
 {
 	int	i;
-	int	curnum;
+	long	curnum;
 
 	i = 2;
 	while (i < argc)

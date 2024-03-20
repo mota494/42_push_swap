@@ -41,9 +41,21 @@ void	ft_sort_three(t_stack **stack_a)
 
 void	get_targets(t_stack **stack_a, t_stack **stack_b)
 {
+	long	min;
+	long	max;
+	t_stack *temp;	
+
 	push_b(stack_a, stack_b);
-	push_b(stack_a, stack_b);
-		 
+	push_b(stack_a, stack_b); 	 
+	min = min_num(stack_b);
+	max = max_num(stack_b);
+	temp = *stack_a;
+	while(temp->next)
+	{
+
+		temp = temp->next;
+	}
+
 }
 
 void	turk_algo(t_stack **stack_a, t_stack **stack_b)

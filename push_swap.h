@@ -22,7 +22,7 @@ typedef struct s_stack
 {
 	long				content;
 	long				target;
-	long				cost;
+	int				cost;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -30,7 +30,8 @@ typedef struct s_stack
 void	ft_populate_list(t_stack **head, int argc, char **argv);
 t_stack	*ft_add_node(int num);
 int		ft_num_elems(t_stack **stack);
-int		max_num(t_stack **stack);
+long		max_num(t_stack **stack);
+long		min_num(t_stack **stack);
 int		ft_node_index(t_stack **stack, int num);
 
 /* Operations Stack A */
