@@ -28,12 +28,12 @@ int	ft_check_sort(t_stack **stack_a)
 
 void	ft_sort_three(t_stack **stack_a)
 {
-	if (ft_num_elems(stack_a) == ft_node_index(stack_a, max_num(stack_a)))
+	if (num_elems(stack_a) == node_index(stack_a, max_num(stack_a)))
 	{
 		swap_a(stack_a);
 		return ;
 	}
-	while (ft_num_elems(stack_a) != ft_node_index(stack_a, max_num(stack_a)))
+	while (num_elems(stack_a) != node_index(stack_a, max_num(stack_a)))
 		reverse_rra(stack_a);
 	if (ft_check_sort(stack_a) == 0)
 		swap_a(stack_a);
@@ -65,16 +65,17 @@ void	get_targets(t_stack **stack_a, t_stack **stack_b)
 void	turk_algo(t_stack **stack_a, t_stack **stack_b)
 {
 	get_targets(stack_a, stack_b);
+	pushingb(stack_a, stack_b);
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_num_elems(stack_a) == 3)
+	if (num_elems(stack_a) == 3)
 	{
 		ft_sort_three(stack_a);
 		return ;
 	}
-	else if (ft_num_elems(stack_a) == 2)
+	else if (num_elems(stack_a) == 2)
 	{
 		rotate_a(stack_a);
 		return ;

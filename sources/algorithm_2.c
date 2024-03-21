@@ -12,3 +12,26 @@
 
 #include "../push_swap.h"
 
+void	calc_cost(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack *t;
+	int	cost;
+	int	node;
+
+	t = *stack_a;
+	while(t)
+	{
+		node = node_index(stack_a, t->content);
+		if (node > num_elems(stack_a)/2)
+		{
+			cost = (num_elems(stack_a) - node) + 1;
+			
+		}
+		t = t->next;
+	}
+}
+
+void	pushingb(t_stack **stack_a, t_stack **stack_b)
+{
+	
+}
