@@ -17,8 +17,8 @@ long	max_num(t_stack **stack)
 	long	max;
 	t_stack	*temp;
 
-	max = 0;
 	temp = *stack;
+	max = temp->content;
 	while (temp)
 	{
 		if (temp->content > max)
@@ -33,8 +33,8 @@ long	min_num(t_stack **stack)
 	long	min;
 	t_stack	*temp;
 
-	min = 0;
 	temp = *stack;
+	min = temp->content;
 	while(temp)
 	{
 		if (temp->content < min)
