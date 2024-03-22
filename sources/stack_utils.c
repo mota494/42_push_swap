@@ -58,7 +58,7 @@ int	num_elems(t_stack **stack)
 }
 
 
-int	node_index(t_stack **stack, int num)
+int	node_index(t_stack **stack, long num)
 {
 	int		count;
 	t_stack	*temp;

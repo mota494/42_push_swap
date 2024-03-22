@@ -32,7 +32,7 @@ t_stack	*ft_add_node(int num);
 int		num_elems(t_stack **stack);
 long		max_num(t_stack **stack);
 long		min_num(t_stack **stack);
-int		node_index(t_stack **stack, int num);
+int		node_index(t_stack **stack, long num);
 
 /* Operations Stack A */
 void	swap_a(t_stack **stack_a);
@@ -64,9 +64,10 @@ int		ft_check_sort(t_stack **stack_a);
 void	ft_sort_three(t_stack **stack_a);
 void	get_targets(t_stack **stack_a, t_stack **stack_b);	
 void	turk_algo(t_stack **stack_a, t_stack **stack_b);
-void	pushingb(t_stack **stack_a, t_stack **stack_b);
 void	calc_cost(t_stack **stack_a, t_stack **stack_b);
 int	get_b_cost(long target, int a_cost,t_stack **stack_b);
+void	push_to_b(t_stack **stack_a, t_stack **stack_b);
+long	get_lowest_cost(t_stack **stack_a);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);

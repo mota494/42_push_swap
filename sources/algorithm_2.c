@@ -49,3 +49,31 @@ void	calc_cost(t_stack **stack_a, t_stack **stack_b)
 		t = t->next;
 	}
 }
+
+long	get_lowest_cost(t_stack **stack_a)
+{
+	int	min;
+	long	toret;
+	t_stack *temp;
+
+	temp = *stack_a;
+	min = temp->cost;
+	while (temp)
+	{
+		if (temp->cost < min)
+		{
+			min = temp->cost;
+			toret = temp->content;
+		}
+		temp = temp->next;
+	}
+	return (toret);
+}
+
+void	push_to_b(t_stack **stack_a, t_stack **stack_b)
+{
+	while (num_elems(stack_a) > 0)
+	{
+		node_index(stack_a, get_lowest_cost(stack_a));		
+	}
+}
