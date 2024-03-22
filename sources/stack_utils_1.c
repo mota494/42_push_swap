@@ -43,3 +43,20 @@ long	min_num(t_stack **stack)
 	}
 	return (min);
 }
+
+void	rotate_a_unt(t_stack **stack, long num)
+{
+	t_stack *temp;
+
+	temp = *stack;
+	if (temp->rot_to == 0)
+	{
+		while (node_index(stack, num) != 1)
+		{
+			reverse_rra(stack);
+		}
+	}
+	else if (temp->rot_to == 1)
+	{
+	}
+}

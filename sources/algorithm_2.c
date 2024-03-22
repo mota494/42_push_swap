@@ -40,23 +40,26 @@ void	calc_cost(t_stack **stack_a, t_stack **stack_b)
 			cost = (num_elems(stack_a) - node) + 1;
 			cost = get_b_cost(t->target, cost, stack_b);
 			t->cost = cost;
+			t->rot_to = 0;
 		}
 		else
 		{
 			cost = node;
 			cost = get_b_cost(t->target, cost, stack_b);
+			t->cost = cost;
+			t->rot_to = 1;
 		}
 		t = t->next;
 	}
 }
 
-long	get_lowest_cost(t_stack **stack_a)
+long	get_lowest_cost(t_stack **stack)
 {
 	int	min;
 	long	toret;
 	t_stack *temp;
 
-	temp = *stack_a;
+	temp = *stack;
 	min = temp->cost;
 	while (temp)
 	{
@@ -76,6 +79,6 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 
 	while (num_elems(stack_a) > 0)
 	{
-		get = node_index(stack_a, get_lowest_cost(stack_a));
+		rotate_a_unt(stack_a, get_lowest_cost(stack_a));
 	}
 }
