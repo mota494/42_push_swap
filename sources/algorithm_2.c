@@ -72,8 +72,10 @@ long	get_lowest_cost(t_stack **stack_a)
 
 void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
+	int get;
+
 	while (num_elems(stack_a) > 0)
 	{
-		node_index(stack_a, get_lowest_cost(stack_a));		
+		get = node_index(stack_a, get_lowest_cost(stack_a));
 	}
 }
