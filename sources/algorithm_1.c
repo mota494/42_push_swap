@@ -65,7 +65,7 @@ void	get_targets(t_stack **stack_a, t_stack **stack_b)
 void	turk_algo(t_stack **stack_a, t_stack **stack_b)
 {
 	get_targets(stack_a, stack_b);
-	pushingb(stack_a, stack_b);
+	calc_cost(stack_a, stack_b);
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)

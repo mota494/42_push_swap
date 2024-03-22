@@ -66,6 +66,7 @@ void	get_targets(t_stack **stack_a, t_stack **stack_b);
 void	turk_algo(t_stack **stack_a, t_stack **stack_b);
 void	pushingb(t_stack **stack_a, t_stack **stack_b);
 void	calc_cost(t_stack **stack_a, t_stack **stack_b);
+int	get_b_cost(long target, int a_cost,t_stack **stack_b);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);

@@ -42,7 +42,7 @@ void	ft_populate_list(t_stack **head, int argc, char **argv)
 	}
 }
 
-int	ft_num_elems(t_stack **stack)
+int	num_elems(t_stack **stack)
 {
 	int		count;
 	t_stack	*temp;
@@ -58,7 +58,7 @@ int	ft_num_elems(t_stack **stack)
 }
 
 
-int	ft_node_index(t_stack **stack, int num)
+int	node_index(t_stack **stack, int num)
 {
 	int		count;
 	t_stack	*temp;
