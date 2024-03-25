@@ -82,7 +82,7 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 	target = get_lowest_target(stack_a, num);
 	if (node_index(stack_a, num) != 1 && node_index(stack_b, target) != 1)
 	{
-		while ()
+		while () //see how many times can b and a be rotated simultanously use stack_utils_2.c
 	}
 }
 
