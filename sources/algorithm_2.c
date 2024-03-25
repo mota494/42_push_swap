@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include <cmath>
 
 int	get_b_cost(long target, int cost, t_stack **stack_b)
 {
@@ -81,7 +80,10 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 
 	num = get_lowest_cost(stack_a);
 	target = get_lowest_target(stack_a, num);
-	if (node_index(stack_a, num) != 1 && node_index(stack_b, ))
+	if (node_index(stack_a, num) != 1 && node_index(stack_b, target) != 1)
+	{
+		while ()
+	}
 }
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)
