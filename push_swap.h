@@ -70,6 +70,10 @@ int	get_b_cost(long target, int a_cost,t_stack **stack_b);
 long	get_lowest_cost(t_stack **stack);
 void	sort_b(t_stack **stack_b);
 void	main_algo(t_stack **stack_a, t_stack **stack_b);
+void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b);	
+void	rotate_a_unt(t_stack **stack_a, long num);
+int	get_rot_dir(t_stack **stack, long num);
+long	get_lowest_target(t_stack **stack, long num);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);

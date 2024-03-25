@@ -52,3 +52,28 @@ void	sort_b(t_stack **stack_b)
 	if (temp->content < temp->next->content)
 		swap_b(stack_b);
 }
+
+int	get_rot_dir(t_stack **stack, long num)
+{
+	t_stack *temp;
+
+	temp = *stack;
+	while (temp)
+	{
+		if (temp->content == num)
+			return (temp->rot_to);
+		temp = temp->next;
+	}
+	return (2);
+}
+
+void	rotate_a_unt(t_stack **stack_a, long num)
+{
+	while (node_index(stack_a, num) != 1)
+	{
+		if (get_rot_dir(stack_a, num) == 1)
+			rotate_a(stack_a);
+		else
+			reverse_rra(stack_a);
+	}
+}
