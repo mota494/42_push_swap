@@ -42,6 +42,7 @@ void	swap_ss(t_stack **stack_b, t_stack **stack_a)
 {
 	swap_a(stack_a);
 	swap_b(stack_b);
+	ft_printf("ss\n");
 }
 
 void	rotate_a(t_stack **stack_a)
