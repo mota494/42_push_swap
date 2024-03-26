@@ -40,14 +40,12 @@ void	calc_cost(t_stack **stack_a, t_stack **stack_b)
 			cost = (num_elems(stack_a) - node) + 1;
 			cost = get_b_cost(t->target, cost, stack_b);
 			t->cost = cost;
-			t->rot_to = 0;
 		}
 		else
 		{
 			cost = node;
 			cost = get_b_cost(t->target, cost, stack_b);
 			t->cost = cost;
-			t->rot_to = 1;
 		}
 		t = t->next;
 	}
@@ -82,8 +80,16 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 	target = get_lowest_target(stack_a, num);
 	if (node_index(stack_a, num) != 1 && node_index(stack_b, target) != 1)
 	{
-		while () //see how many times can b and a be rotated simultanously use stack_utils_2.c
+		while (check_rot(stack_a, stack_b, num, target) == 1)
+		{
+			rotate_both_dir(stack_a, stack_b, num);
+		}
 	}
+	if (node_index(stack_a, num) != 1)	
+		rotate_a_unt(stack_a, num);
+	if (node_index(stack_b, target) != 1)
+		rotate_b_unt(stack_b, target);
+		
 }
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)

@@ -72,9 +72,12 @@ void	sort_b(t_stack **stack_b);
 void	main_algo(t_stack **stack_a, t_stack **stack_b);
 void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b);	
 void	rotate_a_unt(t_stack **stack_a, long num);
+void	rotate_b_unt(t_stack **stack_b, long num);
 int	get_rot_dir(t_stack **stack, long num);
 long	get_lowest_target(t_stack **stack, long num);
 int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar);
+void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num);	
+void	get_rot_info(t_stack **stack);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
