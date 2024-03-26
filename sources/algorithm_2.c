@@ -37,7 +37,7 @@ void	calc_cost(t_stack **stack_a, t_stack **stack_b)
 		node = node_index(stack_a, t->content);
 		if (node > (num_elems(stack_a))/2)
 		{
-			cost = (num_elems(stack_a) - node) + 1;
+			cost = num_elems(stack_a) - node;
 			cost = get_b_cost(t->target, cost, stack_b);
 			t->cost = cost;
 		}

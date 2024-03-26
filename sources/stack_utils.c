@@ -47,7 +47,7 @@ int	num_elems(t_stack **stack)
 	int		count;
 	t_stack	*temp;
 
-	count = 0;
+	count = 1;
 	temp = *stack;
 	while (temp)
 	{

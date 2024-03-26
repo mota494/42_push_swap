@@ -19,7 +19,7 @@ void	mainfree(t_stack **start_a, t_stack **start_b)
 	t_stack *temp;
 	
 	temp = *start_a;
-	i = num_elems(start_a);
+	i = num_elems(start_a) - 1;
 	while (i > 0)
 	{
 		old_node = temp;
@@ -28,7 +28,7 @@ void	mainfree(t_stack **start_a, t_stack **start_b)
 		i--;
 	}
 	temp = *start_b;
-	i = num_elems(start_b);
+	i = num_elems(start_b) - 1;
 	while (i > 0)
 	{
 		old_node = temp;

@@ -69,9 +69,9 @@ void	turk_algo(t_stack **stack_a, t_stack **stack_b)
 
 	get_targets(stack_a, stack_b);
 	sort_b(stack_b);
-	calc_cost(stack_a, stack_b);
 	get_rot_info(stack_a);
 	get_rot_info(stack_b);
+	calc_cost(stack_a, stack_b);
 	todel_a = *stack_a;
 	todel_b = *stack_b;
 	while (todel_a)
