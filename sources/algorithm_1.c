@@ -64,10 +64,29 @@ void	get_targets(t_stack **stack_a, t_stack **stack_b)
 
 void	turk_algo(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack *todel_a;
+	t_stack *todel_b;
+
 	get_targets(stack_a, stack_b);
 	sort_b(stack_b);
 	calc_cost(stack_a, stack_b);
-	main_algo(stack_a, stack_b);
+	get_rot_info(stack_a);
+	get_rot_info(stack_b);
+	todel_a = *stack_a;
+	todel_b = *stack_b;
+	while (todel_a)
+	{
+		printf("\nContent: %ld\nTarget: %ld\nRot_to: %d\nCost: %d\n", todel_a->content, todel_a->target, todel_a->rot_to, todel_a->cost);
+		printf("---");
+		todel_a = todel_a->next;
+	}
+	while (todel_b)
+	{
+		printf("\nContent: %ld\n Rot_to: %d\n", todel_b->content, todel_b->rot_to);
+		printf("\n---\n");
+		todel_b = todel_b->next;
+	}
+	//main_algo(stack_a, stack_b);
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
