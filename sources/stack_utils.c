@@ -64,12 +64,16 @@ int	node_index(t_stack **stack, long num)
 
 	temp = *stack;
 	count = 1;
+	printf("%ld", num);
 	while (temp)
 	{
 		if (temp->content == num)
+		{
+			break;
 			return (count);
-		temp = temp->next;
+		}
 		count++;
+		temp = temp->next;
 	}
 	return (count);
 }

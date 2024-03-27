@@ -28,7 +28,7 @@ long	get_lowest_target(t_stack **stack_b, long num)
 
 int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 {
-	if (node_index(stack_a, num) != 1 || node_index(stack_b, tar) != 1)
+	if (node_index(stack_a, num) != 1 && node_index(stack_b, tar) != 1)
 		return (1);
 	else
 		return (0);
