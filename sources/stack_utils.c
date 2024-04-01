@@ -49,6 +49,8 @@ int	num_elems(t_stack **stack)
 
 	count = 1;
 	temp = *stack;
+	if (!temp)
+		return(0);
 	while (temp)
 	{
 		count++;
@@ -64,7 +66,6 @@ int	node_index(t_stack **stack, long num)
 
 	temp = *stack;
 	count = 1;
-	printf("%ld", num);
 	while (temp)
 	{
 		if (temp->content == num)

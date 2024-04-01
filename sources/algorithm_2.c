@@ -61,7 +61,7 @@ long	get_lowest_cost(t_stack **stack)
 	min = temp->cost;
 	while (temp)
 	{
-		if (temp->cost < min)
+		if (temp->cost <= min)
 		{
 			min = temp->cost;
 			toret = temp->content;
@@ -77,21 +77,21 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 	long	target;
 
 	num = get_lowest_cost(stack_a);
-	printf("%ld", num);
-	/*target = get_lowest_target(stack_a, num);
+	target = get_lowest_target(stack_a, num);
 	if (node_index(stack_a, num) != 1 && node_index(stack_b, target) != 1)
 	{
 		while (check_rot(stack_a, stack_b, num, target) == 1)
-		{
 			rotate_both_dir(stack_a, stack_b, num);
-		}
 	}
 	if (node_index(stack_a, num) != 1)	
 		rotate_a_unt(stack_a, num);
 	if (node_index(stack_b, target) != 1)
 		rotate_b_unt(stack_b, target);
 	if (node_index(stack_a, num) == 1 && node_index(stack_b, target) == 1)
-		push_b(stack_a, stack_b);*/
+		push_b(stack_a, stack_b);
+	//if (num > target)
+		//swap_b(stack_b);
+	//organize_b(stack_b);
 }
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)
@@ -105,7 +105,8 @@ void	main_algo(t_stack **stack_a, t_stack **stack_b)
 		recalc_targets(stack_a, stack_b);
 		get_rot_info(stack_a);
 		get_rot_info(stack_b);
-		calc_cost(stack_a, stack_b);
 		rotate_b_unt(stack_b, max_num(stack_b));
+		calc_cost(stack_a, stack_b);
+		ft_print_visualize(stack_a, stack_b);
 	}
 }

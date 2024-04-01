@@ -54,7 +54,7 @@ void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("\n\n[Stack A]\n");
 	while (tempa)
 	{
-		ft_printf("❨ %d ❩➛", tempa->content);
+		ft_printf("❨ %d (%d)❩➛", tempa->content, tempa->target);
 		tempa = tempa->next;
 	}
 	ft_printf("❨ NULL ❩\n");
@@ -67,19 +67,18 @@ void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("❨ NULL ❩");
 }
 
-int	ft_power(int num, int power)
+void	print_one_stack(t_stack **stack)
 {
-	int	toret;
-	int i;
+	t_stack *temp;
 
-	i = 0;
-	toret = 1;
-	if (power == 0)
-		return (1);
-	while (i < power)
+	temp = *stack;
+	while(temp)
 	{
-		toret = toret * num;
-		i++;
+		ft_printf("[%p]\n", temp);
+		printf("Content: %ld \n", temp->content);
+		printf("Target: %ld \n", temp->target);
+		ft_printf("Cost: %d \n", temp->cost);
+		ft_printf("Next: %p \n\n", temp->next);
+		temp = temp->next;
 	}
-	return (toret);
 }
