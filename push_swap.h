@@ -79,7 +79,6 @@ int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar);
 void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num);	
 void	get_rot_info(t_stack **stack);
 void	recalc_targets(t_stack **stack_a, t_stack **stack_b);
-void	organize_b(t_stack **stack_b);
 
 /* Extras */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);

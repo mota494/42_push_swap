@@ -12,12 +12,24 @@
 
 #include "../push_swap.h"
 
+int	get_dif(long num, long orig_targ,long target)
+{
+	long diff;
+	long oldiff;
+
+	oldiff = orig_targ - num;
+	diff = target - num;
+	if (diff < oldiff && diff > 0)
+		return (1);
+	else if (oldiff < 0 && diff > 0)
+		return (1);
+	return (0);
+}
+
 void	recalc_targets(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack *temp_a;
 	t_stack *temp_b;
-	int	diff;
-	int	oldiff;
 
 	temp_a = *stack_a;
 	while (temp_a)
@@ -25,13 +37,15 @@ void	recalc_targets(t_stack **stack_a, t_stack **stack_b)
 		temp_b = *stack_b;
 		if (temp_a->content < min_num(stack_b))
 			temp_a->target = min_num(stack_b);
+		else if (temp_a->content > max_num(stack_b))
+			temp_a->target = max_num(stack_b);
 		else
 		{
 			while (temp_b)
 			{
-				oldiff = temp_a->content - temp_a->target;
-				diff = temp_a->content - temp_b->content;
-				if (diff < oldiff && diff > 0)
+				
+				if(get_dif(temp_a->content, temp_a->target
+							, temp_b->content) == 1)
 					temp_a->target = temp_b->content;
 				temp_b = temp_b->next;
 			}
@@ -39,18 +53,3 @@ void	recalc_targets(t_stack **stack_a, t_stack **stack_b)
 		temp_a = temp_a->next;
 	}
 }
-/*
-void	organize_b(t_stack **stack_b)
-{
-	t_stack *temp;
-
-	if (min_num(stack_b) != temp->content)
-	{
-		while(temp->content < temp->next->content)
-		{
-			swap_b(stack_b);
-			reverse_rrb(stack_b);
-		}
-	}
-}
-*/

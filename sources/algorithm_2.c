@@ -89,9 +89,8 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 		rotate_b_unt(stack_b, target);
 	if (node_index(stack_a, num) == 1 && node_index(stack_b, target) == 1)
 		push_b(stack_a, stack_b);
-	//if (num > target)
-		//swap_b(stack_b);
-	//organize_b(stack_b);
+	if (num < target)
+		swap_b(stack_b);
 }
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)
