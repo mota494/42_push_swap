@@ -37,14 +37,14 @@ int		node_index(t_stack **stack, long num);
 
 /* Operations Stack A */
 void	swap_a(t_stack **stack_a);
-void	rotate_a(t_stack **stack_a);
-void	reverse_rra(t_stack **stack_a);
+void	rotate_a(t_stack **stack_a, int print);
+void	reverse_rra(t_stack **stack_a, int print);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 
 /* Operations Stack B */
 void	swap_b(t_stack **stack_b);
-void	rotate_b(t_stack **stack_b);
-void	reverse_rrb(t_stack **stack_b);
+void	rotate_b(t_stack **stack_b, int print);
+void	reverse_rrb(t_stack **stack_b, int print);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
 
 /* Operations both stacks */

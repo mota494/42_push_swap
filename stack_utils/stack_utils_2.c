@@ -28,6 +28,8 @@ long	get_lowest_target(t_stack **stack_b, long num)
 
 int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 {
+	if (get_rot_dir(stack_a, num) != get_rot_dir(stack_b, tar))
+		return (0);
 	if (node_index(stack_a, num) != 1 && node_index(stack_b, tar) != 1)
 		return (1);
 	else
@@ -46,10 +48,10 @@ void	rotate_b_unt(t_stack **stack_b, long num)
 {
 	while (node_index(stack_b, num) != 1)
 	{
-		if (get_rot_dir(stack_b, num) != 1)
-			rotate_b(stack_b);
+		if (get_rot_dir(stack_b, num) == 1)
+			rotate_b(stack_b, 1);
 		else
-			reverse_rrb(stack_b);
+			reverse_rrb(stack_b, 1);
 	}
 }
 

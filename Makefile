@@ -1,11 +1,30 @@
 NAME = pushswap
+
+#==============================================================================#
+#                                    RULES                                     #
+#==============================================================================#
+
 CC = cc -g
 FLAGS =  -Wall -Wextra -Werror
+RM = rm -rf
+
+#==============================================================================#
+#                                    FILES                                     #
+#==============================================================================#
+
 LIBFT = include/libft/libft.a
 PRINTF = include/ft_printf/libftprintf.a
-SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_1.c sources/operations_stack_2.c sources/operations_stack_3.c sources/error_check.c sources/algorithm_1.c sources/algorithm_2.c sources/algorithm_3.c sources/stack_utils_1.c sources/stack_utils_2.c
-RM = rm -rf
+SRC =\
+main/main.c main/error_check.c \
+extras/extras.c \
+operations/operations_stack_1.c operations/operations_stack_2.c operations/operations_stack_3.c \
+algorithm/algorithm_1.c algorithm/algorithm_2.c algorithm/algorithm_3.c \
+stack_utils/stack_utils.c stack_utils/stack_utils_1.c stack_utils/stack_utils_2.c
 OBJ = $(SRC:.c=.o)
+
+#==============================================================================#
+#                                    MAKE                                      #
+#==============================================================================#
 
 all: $(NAME)
 

@@ -34,7 +34,7 @@ void	ft_sort_three(t_stack **stack_a)
 		return ;
 	}
 	while (num_elems(stack_a) != node_index(stack_a, max_num(stack_a)))
-		reverse_rra(stack_a);
+		reverse_rra(stack_a, 1);
 	if (ft_check_sort(stack_a) == 0)
 		swap_a(stack_a);
 }
@@ -81,7 +81,7 @@ void	mainsort(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (num_elems(stack_a) == 2)
 	{
-		rotate_a(stack_a);
+		rotate_a(stack_a, 1);
 		return ;
 	}
 	else

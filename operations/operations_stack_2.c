@@ -14,12 +14,12 @@
 
 void	rotate_rr(t_stack **stack_a, t_stack **stack_b)
 {
-	rotate_a(stack_a);
-	rotate_b(stack_b);
+	rotate_a(stack_a, 0);
+	rotate_b(stack_b, 0);
 	ft_printf("rr\n");
 }
 
-void	reverse_rra(t_stack **stack_a)
+void	reverse_rra(t_stack **stack_a, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -37,10 +37,11 @@ void	reverse_rra(t_stack **stack_a)
 	last->next = *stack_a;
 	*stack_a = last;
 	temp->next = NULL;
-	ft_printf("rra\n");
+	if (print == 1)
+		ft_printf("rra\n");
 }
 
-void	reverse_rrb(t_stack **stack_b)
+void	reverse_rrb(t_stack **stack_b, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -58,12 +59,13 @@ void	reverse_rrb(t_stack **stack_b)
 	last->next = *stack_b;
 	*stack_b = last;
 	temp->next = NULL;
-	ft_printf("rrb\n");
+	if (print == 1)
+		ft_printf("rrb\n");
 }
 
 void	reverse_rrr(t_stack **stack_a, t_stack **stack_b)
 {
-	reverse_rra(stack_a);
-	reverse_rrb(stack_b);
+	reverse_rra(stack_a, 0);
+	reverse_rrb(stack_b, 0);
 	ft_printf("rrr\n");
 }

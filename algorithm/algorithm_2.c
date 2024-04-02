@@ -18,7 +18,7 @@ int	get_b_cost(long target, int cost, t_stack **stack_b)
 	int	node;
 
 	node = node_index(stack_b, target);
-	if (node > num_elems(stack_b)/2)
+	if (node >= num_elems(stack_b)/2)
 		toret = cost + (num_elems(stack_b) - node) + 1;
 	else
 		toret = cost + node;
@@ -97,6 +97,7 @@ void	main_algo(t_stack **stack_a, t_stack **stack_b)
 {
 	while (num_elems(stack_a) > 0)
 	{
+		printf("Content: %ld \n Cost: %d \n", (*stack_a)->content, (*stack_a)->cost);
 		if ((*stack_a)->cost == 0)
 			push_b(stack_a, stack_b);
 		else
@@ -106,6 +107,6 @@ void	main_algo(t_stack **stack_a, t_stack **stack_b)
 		get_rot_info(stack_b);
 		rotate_b_unt(stack_b, max_num(stack_b));
 		calc_cost(stack_a, stack_b);
-		ft_print_visualize(stack_a, stack_b);
 	}
+	//ft_print_visualize(stack_a, stack_b);
 }

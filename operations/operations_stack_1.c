@@ -45,7 +45,7 @@ void	swap_ss(t_stack **stack_b, t_stack **stack_a)
 	ft_printf("ss\n");
 }
 
-void	rotate_a(t_stack **stack_a)
+void	rotate_a(t_stack **stack_a, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -59,10 +59,11 @@ void	rotate_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("ra\n");
+	if (print == 1)
+		ft_printf("ra\n");
 }
 
-void	rotate_b(t_stack **stack_b)
+void	rotate_b(t_stack **stack_b, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -76,5 +77,6 @@ void	rotate_b(t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("rb\n");
+	if (print == 1)
+		ft_printf("rb\n");
 }

@@ -72,8 +72,8 @@ void	rotate_a_unt(t_stack **stack_a, long num)
 	while (node_index(stack_a, num) != 1)
 	{
 		if (get_rot_dir(stack_a, num) == 1)
-			rotate_a(stack_a);
+			rotate_a(stack_a, 1);
 		else
-			reverse_rra(stack_a);
+			reverse_rra(stack_a, 1);
 	}
 }
