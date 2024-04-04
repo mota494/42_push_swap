@@ -95,7 +95,7 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)
 {
-	while (num_elems(stack_a) > 0)
+	while (num_elems(stack_a) > 3)
 	{
 		if ((*stack_a)->cost == 0)
 			push_b(stack_a, stack_b);
