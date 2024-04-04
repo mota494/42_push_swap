@@ -36,15 +36,15 @@ long		min_num(t_stack **stack);
 int		node_index(t_stack **stack, long num);
 
 /* Operations Stack A */
-void	swap_a(t_stack **stack_a);
-void	rotate_a(t_stack **stack_a);
-void	reverse_rra(t_stack **stack_a);
+void	swap_a(t_stack **stack_a, int print);
+void	rotate_a(t_stack **stack_a, int print);
+void	reverse_rra(t_stack **stack_a, int print);
 void	push_a(t_stack **stack_a, t_stack **stack_b);
 
 /* Operations Stack B */
-void	swap_b(t_stack **stack_b);
-void	rotate_b(t_stack **stack_b);
-void	reverse_rrb(t_stack **stack_b);
+void	swap_b(t_stack **stack_b, int print);
+void	rotate_b(t_stack **stack_b, int print);
+void	reverse_rrb(t_stack **stack_b, int print);
 void	push_b(t_stack **stack_a, t_stack **stack_b);
 
 /* Operations both stacks */
@@ -76,7 +76,7 @@ void	rotate_b_unt(t_stack **stack_b, long num);
 int	get_rot_dir(t_stack **stack, long num);
 long	get_lowest_target(t_stack **stack, long num);
 int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar);
-void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num);	
+void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num, long tar);	
 void	get_rot_info(t_stack **stack);
 void	recalc_targets(t_stack **stack_a, t_stack **stack_b);
 

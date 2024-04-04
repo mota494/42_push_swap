@@ -81,7 +81,7 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 	if (node_index(stack_a, num) != 1 && node_index(stack_b, target) != 1)
 	{
 		while (check_rot(stack_a, stack_b, num, target) == 1)
-			rotate_both_dir(stack_a, stack_b, num);
+			rotate_both_dir(stack_a, stack_b, num, target);
 	}
 	if (node_index(stack_a, num) != 1)	
 		rotate_a_unt(stack_a, num);
@@ -90,12 +90,12 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b)
 	if (node_index(stack_a, num) == 1 && node_index(stack_b, target) == 1)
 		push_b(stack_a, stack_b);
 	if (num < target)
-		swap_b(stack_b);
+		swap_b(stack_b, 1);
 }
 
 void	main_algo(t_stack **stack_a, t_stack **stack_b)
 {
-	while (num_elems(stack_a) > 3)
+	while (num_elems(stack_a) != 3)
 	{
 		if ((*stack_a)->cost == 0)
 			push_b(stack_a, stack_b);

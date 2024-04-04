@@ -30,13 +30,13 @@ void	ft_sort_three(t_stack **stack_a)
 {
 	if (num_elems(stack_a) == node_index(stack_a, max_num(stack_a)))
 	{
-		swap_a(stack_a);
+		swap_a(stack_a, 1);
 		return ;
 	}
 	while (num_elems(stack_a) != node_index(stack_a, max_num(stack_a)))
-		reverse_rra(stack_a);
+		reverse_rra(stack_a, 1);
 	if (ft_check_sort(stack_a) == 0)
-		swap_a(stack_a);
+		swap_a(stack_a, 1);
 }
 
 void	get_targets(t_stack **stack_a, t_stack **stack_b)
@@ -70,7 +70,6 @@ void	turk_algo(t_stack **stack_a, t_stack **stack_b)
 	get_rot_info(stack_b);
 	calc_cost(stack_a, stack_b);
 	main_algo(stack_a, stack_b);
-	//rotate_b_unt(stack_b, max_num(stack_b));
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
@@ -82,7 +81,7 @@ void	mainsort(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (num_elems(stack_a) == 2)
 	{
-		rotate_a(stack_a);
+		rotate_a(stack_a, 1);
 		return ;
 	}
 	else

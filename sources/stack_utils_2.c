@@ -34,12 +34,22 @@ int	check_rot(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 		return (0);
 }
 
-void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num)
+void	rotate_both_dir(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 {
-	if (get_rot_dir(stack_a, num) == 1)
-		rotate_rr(stack_a, stack_b);
+	if (node_index(stack_a, num) > node_index(stack_b, tar))
+	{
+		if (get_rot_dir(stack_a, num) == 1)
+			rotate_rr(stack_a, stack_b);
+		else
+			reverse_rrr(stack_a, stack_b);
+	}
 	else
-		reverse_rrr(stack_a, stack_b);
+	{
+		if (get_rot_dir(stack_b, num) == 1)
+			rotate_rr(stack_a, stack_b);
+		else
+			reverse_rrr(stack_a, stack_b);
+	}
 }
 
 void	rotate_b_unt(t_stack **stack_b, long num)
@@ -47,9 +57,9 @@ void	rotate_b_unt(t_stack **stack_b, long num)
 	while (node_index(stack_b, num) != 1)
 	{
 		if (get_rot_dir(stack_b, num) != 1)
-			rotate_b(stack_b);
+			rotate_b(stack_b, 1);
 		else
-			reverse_rrb(stack_b);
+			reverse_rrb(stack_b, 1);
 	}
 }
 

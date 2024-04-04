@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void	swap_a(t_stack **stack_a)
+void	swap_a(t_stack **stack_a, int print)
 {
 	t_stack	*temp;
 	t_stack	*next;
@@ -22,10 +22,11 @@ void	swap_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	(*stack_a)->next = temp;
 	(*stack_a)->next->next = next;
-	ft_printf("sa\n");
+	if (print == 1)	
+		ft_printf("sa\n");
 }
 
-void	swap_b(t_stack **stack_b)
+void	swap_b(t_stack **stack_b, int print)
 {
 	t_stack	*temp;
 	t_stack	*next;
@@ -35,17 +36,18 @@ void	swap_b(t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	(*stack_b)->next = temp;
 	(*stack_b)->next->next = next;
-	ft_printf("sb\n");
+	if (print == 1)
+		ft_printf("sb\n");
 }
 
 void	swap_ss(t_stack **stack_b, t_stack **stack_a)
 {
-	swap_a(stack_a);
-	swap_b(stack_b);
+	swap_a(stack_a, 0);
+	swap_b(stack_b, 0);
 	ft_printf("ss\n");
 }
 
-void	rotate_a(t_stack **stack_a)
+void	rotate_a(t_stack **stack_a, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -59,10 +61,11 @@ void	rotate_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("ra\n");
+	if (print == 1)
+		ft_printf("ra\n");
 }
 
-void	rotate_b(t_stack **stack_b)
+void	rotate_b(t_stack **stack_b, int print)
 {
 	t_stack	*last;
 	t_stack	*temp;
@@ -76,5 +79,6 @@ void	rotate_b(t_stack **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	last->next = temp;
-	ft_printf("rb\n");
+	if (print == 1)
+		ft_printf("rb\n");
 }
