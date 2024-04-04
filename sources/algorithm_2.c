@@ -104,8 +104,6 @@ void	main_algo(t_stack **stack_a, t_stack **stack_b)
 		recalc_targets(stack_a, stack_b);
 		get_rot_info(stack_a);
 		get_rot_info(stack_b);
-		rotate_b_unt(stack_b, max_num(stack_b));
 		calc_cost(stack_a, stack_b);
-		ft_print_visualize(stack_a, stack_b);
 	}
 }
