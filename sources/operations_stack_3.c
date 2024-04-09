@@ -58,18 +58,3 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("pb\n");
 }
 
-int	get_max(t_stack **stack_a)
-{
-	int		max;
-	t_stack	*temp;
-
-	temp = *stack_a;
-	max = 0;
-	while (temp)
-	{
-		if (max < temp->content)
-			max = temp->content;
-		temp = temp->next;
-	}
-	return (max);
-}

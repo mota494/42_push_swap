@@ -44,36 +44,3 @@ long	min_num(t_stack **stack)
 	return (min);
 }
 
-void	sort_b(t_stack **stack_b)
-{
-	t_stack *temp;
-
-	temp = *stack_b;
-	if (temp->content < temp->next->content)
-		swap_b(stack_b, 1);
-}
-
-int	get_rot_dir(t_stack **stack, long num)
-{
-	t_stack *temp;
-
-	temp = *stack;
-	while (temp)
-	{
-		if (temp->content == num)
-			return (temp->rot_to);
-		temp = temp->next;
-	}
-	return (2);
-}
-
-void	rotate_a_unt(t_stack **stack_a, long num)
-{
-	while (node_index(stack_a, num) != 1)
-	{
-		if (get_rot_dir(stack_a, num) == 1)
-			rotate_a(stack_a, 1);
-		else
-			reverse_rra(stack_a, 1);
-	}
-}

@@ -12,23 +12,14 @@
 
 #include "../push_swap.h"
 
-void	mainfree(t_stack **start_a, t_stack **start_b)
+void	mainfree(t_stack **start_a)
 {
 	int i;
 	t_stack *old_node;
 	t_stack *temp;
 	
 	temp = *start_a;
-	i = num_elems(start_a) - 1;
-	while (i > 0)
-	{
-		old_node = temp;
-		temp = temp->next;
-		free(old_node);
-		i--;
-	}
-	temp = *start_b;
-	i = num_elems(start_b) - 1;
+	i = num_elems(start_a);
 	while (i > 0)
 	{
 		old_node = temp;
@@ -50,6 +41,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 		ft_populate_list(&start_a, argc, argv);
 	mainsort(&start_a, &start_b);
-	mainfree(&start_a, &start_b);
+	mainfree(&start_a);
+	free(start_b);
 	return (0);
 }

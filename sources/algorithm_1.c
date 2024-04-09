@@ -39,39 +39,6 @@ void	ft_sort_three(t_stack **stack_a)
 		swap_a(stack_a, 1);
 }
 
-void	get_targets(t_stack **stack_a, t_stack **stack_b)
-{
-	long	min;
-	long	max;
-	t_stack *temp;	
-
-	push_b(stack_a, stack_b);
-	push_b(stack_a, stack_b); 
-	min = min_num(stack_b);
-	max = max_num(stack_b);
-	temp = *stack_a;
-	while(temp)
-	{
-		if (temp->content < min)
-			temp->target = min;
-		else if (temp->content > min && temp->content < max)
-			temp->target = min;
-		else if (temp->content > max)
-			temp->target = max;
-		temp = temp->next;
-	}
-}
-
-void	turk_algo(t_stack **stack_a, t_stack **stack_b)
-{
-	get_targets(stack_a, stack_b);
-	sort_b(stack_b);
-	get_rot_info(stack_a);
-	get_rot_info(stack_b);
-	calc_cost(stack_a, stack_b);
-	main_algo(stack_a, stack_b);
-}
-
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
 {
 	if (num_elems(stack_a) == 3)
@@ -83,9 +50,5 @@ void	mainsort(t_stack **stack_a, t_stack **stack_b)
 	{
 		rotate_a(stack_a, 1);
 		return ;
-	}
-	else
-	{
-		turk_algo(stack_a, stack_b);
 	}
 }
