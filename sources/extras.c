@@ -54,7 +54,8 @@ void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("\n\n[Stack A]\n");
 	while (tempa)
 	{
-		ft_printf("❨ %d (%d | %d)❩➛", tempa->content, tempa->target, tempa->cost);
+		ft_printf("❨ %d (%d | %d)❩➛", tempa->content, tempa->target, 
+				tempa->cost);
 		tempa = tempa->next;
 	}
 	ft_printf("❨ NULL ❩\n");

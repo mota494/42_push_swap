@@ -22,9 +22,10 @@ typedef struct s_stack
 {
 	long				content;
 	long				target;
+	int				index;
 	int				cost;
 	int				rot_to;
-	struct s_stack	*next;
+	struct s_stack			*next;
 }					t_stack;
 
 /* operations_stack_1.c */
@@ -48,6 +49,12 @@ void	push_a(t_stack **stack_a, t_stack **stack_b);
 int	ft_check_sort(t_stack **stack_a);
 void	ft_sort_three(t_stack **stack_a);
 void	mainsort(t_stack **stack_a, t_stack **stack_b);
+void	algo_start(t_stack **stack_a, t_stack **stack_b);
+void	get_index(t_stack **stack);
+
+/* algorithm_2.c */
+void	first_target(t_stack **stack_a, t_stack **stack_b);
+void	calc_cost_a(t_stack **stack_a, t_stack **stack_b);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);
