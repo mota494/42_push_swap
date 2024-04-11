@@ -55,6 +55,12 @@ void	get_index(t_stack **stack);
 /* algorithm_2.c */
 void	first_target(t_stack **stack_a, t_stack **stack_b);
 void	calc_cost_a(t_stack **stack_a, t_stack **stack_b);
+int	times_to_rot(t_stack **stack, long num);
+int	get_rot(t_stack **stack, long num);
+int	sim_rot(int costa, int costb);
+
+/* algorithm_3.c */
+int	both_rot(t_stack **stack_a, t_stack **stack_b, long num, long target);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);
@@ -77,6 +83,7 @@ t_stack	*ft_add_node(int num);
 void	ft_populate_list(t_stack **head, int argc, char **argv);
 int	num_elems(t_stack **stack);
 int	node_index(t_stack **stack, long num);
+int	relative_index(t_stack **stack, long num);
 
 /* stack_utils_1.c */
 long	max_num(t_stack **stack);

@@ -41,6 +41,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 		ft_populate_list(&start_a, argc, argv);
 	mainsort(&start_a, &start_b);
+	ft_print_visualize(&start_a, &start_b);
 	mainfree(&start_a);
 	free(start_b);
 	return (0);

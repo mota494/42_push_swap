@@ -65,6 +65,27 @@ int	node_index(t_stack **stack, long num)
 	t_stack	*temp;
 
 	temp = *stack;
+	count = 0;
+	while (temp)
+	{
+		if (temp->content == num)
+		{
+			break;
+			return (count);
+		}
+		count++;
+		temp = temp->next;
+	}
+	return (count);
+}
+
+
+int	relative_index(t_stack **stack, long num)
+{
+	int		count;
+	t_stack	*temp;
+
+	temp = *stack;
 	count = 1;
 	while (temp)
 	{
