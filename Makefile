@@ -1,6 +1,6 @@
 NAME = pushswap
 CC = cc -g
-FLAGS =  -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror
 LIBFT = include/libft/libft.a
 PRINTF = include/ft_printf/libftprintf.a
 SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_1.c sources/operations_stack_2.c sources/operations_stack_3.c sources/error_check.c sources/algorithm_1.c sources/algorithm_2.c sources/algorithm_3.c sources/stack_utils_1.c
@@ -10,7 +10,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME) :  $(OBJ) $(LIBFT) $(PRINTF)
-	$(CC) $(SRC) -o $(NAME) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME) $(LIBFT) $(PRINTF)
 
 $(LIBFT):
 	make -C include/libft
