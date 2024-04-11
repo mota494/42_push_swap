@@ -61,10 +61,10 @@ void	algo_start(t_stack **stack_a, t_stack **stack_b)
 	else
 		push_b(stack_a, stack_a);
 	get_index(stack_a);
-	ft_printf("\n");
 	get_index(stack_b);
 	first_target(stack_a, stack_b);
 	calc_cost_a(stack_a, stack_b);
+	push_to_b(stack_a, stack_b);
 }
 
 void	get_index(t_stack **stack)

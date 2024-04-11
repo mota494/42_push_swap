@@ -61,6 +61,16 @@ int	sim_rot(int costa, int costb);
 
 /* algorithm_3.c */
 int	both_rot(t_stack **stack_a, t_stack **stack_b, long num, long target);
+void	push_to_b(t_stack **stack_a, t_stack **stack_b);
+long	get_lowest_cost(t_stack **stack);
+void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b, long num);
+long	search_target(t_stack **stack, long num);
+
+/* algorithm_4.c */
+int	rot_sim(t_stack **stack_a, t_stack **stack_b, long num, long tar);
+void	rot_both_unt(t_stack **a, t_stack **b, long num, long tar);
+void	rotate_a_unt(t_stack **stack_a, long num);
+void	rotate_b_unt(t_stack **stack_b, long num);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);
