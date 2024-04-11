@@ -85,7 +85,6 @@ void	calc_cost_a(t_stack **stack_a, t_stack **stack_b)
 		if (both_rot(stack_a, stack_b, tempa->content, tempa->target) 
 				&& (costa > 0 && costb > 0))
 			tempa->cost = sim_rot(costa, costb);
-		ft_printf("[%d | %d | %d]", tempa->content, tempa->cost, tempa->target);
 		tempa = tempa->next;
 	}
 }
