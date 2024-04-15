@@ -71,6 +71,10 @@ int	rot_sim(t_stack **stack_a, t_stack **stack_b, long num, long tar);
 void	rot_both_unt(t_stack **a, t_stack **b, long num, long tar);
 void	rotate_a_unt(t_stack **stack_a, long num);
 void	rotate_b_unt(t_stack **stack_b, long num);
+void	find_new_tar(t_stack **stack_a, t_stack **stack_b);
+
+/* algorithm_5.c */
+long	get_diff(long num, long tar, long oldtar);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);

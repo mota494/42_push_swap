@@ -12,13 +12,13 @@ long	get_lowest_cost(t_stack **stack)
 	int	min;
 	t_stack	*temp;
 
-	min = 0;
+	min = (*stack)->cost;
 	temp = *stack;
 	while (temp)
 	{
 		if (temp->cost == 1)
 			break ;
-		if (temp->cost < min)
+		if (temp->cost <= min)
 		{
 			min = temp->cost;
 			break;
@@ -60,8 +60,8 @@ void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b, long num)
 
 void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	/*while (num_elems(stack_a) != 3)
-	{*/
+	while (num_elems(stack_a) != 3)
+	{
 		if ((*stack_a)->cost == 0)
 			push_b(stack_a, stack_b);
 		else
@@ -69,6 +69,10 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 			push_lowest_cost(stack_a, stack_b, 
 					get_lowest_cost(stack_a));
 		}
-		ft_print_visualize(stack_a, stack_b);
-	/*}*/
+		find_new_tar(stack_a, stack_b);
+		get_index(stack_a);
+		get_index(stack_b);
+		calc_cost_a(stack_a, stack_b);
+		rotate_b_unt(stack_b, max_num(stack_b));
+	}
 }

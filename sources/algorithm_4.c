@@ -58,3 +58,29 @@ void	rotate_b_unt(t_stack **stack_b, long num)
 			reverse_rrb(stack_b, 1);
 	}
 }
+
+void	find_new_tar(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*temp_a;
+	t_stack	*temp_b;
+
+	temp_a = *stack_a;
+	while (temp_a)
+	{
+		temp_b = *stack_b;
+		if (temp_a->content > max_num(stack_b) || temp_a->content < 
+				min_num(stack_b))
+			temp_a->target = max_num(stack_b);
+		else
+		{
+			while (temp_b)
+			{
+				temp_a->target = get_diff(temp_a->content, 
+						temp_b->content, 
+						temp_a->target); 
+				temp_b = temp_b->next;
+			}
+		}
+		temp_a = temp_a->next;
+	}
+}
