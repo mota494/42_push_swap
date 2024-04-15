@@ -1,9 +1,9 @@
-NAME = pushswap
+NAME = push_swap
 CC = cc -g
 CFLAGS =  -Wall -Wextra -Werror
 LIBFT = include/libft/libft.a
 PRINTF = include/ft_printf/libftprintf.a
-SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_1.c sources/operations_stack_2.c sources/operations_stack_3.c sources/error_check.c sources/algorithm_1.c sources/algorithm_2.c sources/algorithm_3.c sources/algorithm_4.c sources/algorithm_5.c sources/stack_utils_1.c
+SRC =  sources/main.c sources/extras.c sources/stack_utils.c sources/operations_stack_1.c sources/operations_stack_2.c sources/operations_stack_3.c sources/error_check.c sources/algorithm_1.c sources/algorithm_2.c sources/algorithm_3.c sources/algorithm_4.c sources/algorithm_5.c sources/algorithm_6.c sources/stack_utils_1.c
 RM = rm -rf
 OBJ = $(SRC:.c=.o)
 

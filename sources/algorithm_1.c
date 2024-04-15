@@ -28,6 +28,8 @@ int	ft_check_sort(t_stack **stack_a)
 
 void	ft_sort_three(t_stack **stack_a)
 {
+	if (ft_check_sort(stack_a) == 1)
+		return ;
 	if (num_elems(stack_a) == relative_index(stack_a, max_num(stack_a)))
 	{
 		swap_a(stack_a, 1);

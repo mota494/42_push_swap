@@ -76,6 +76,12 @@ void	find_new_tar(t_stack **stack_a, t_stack **stack_b);
 /* algorithm_5.c */
 long	get_diff(long num, long tar, long oldtar);
 void	back_to_a(t_stack **stack_a, t_stack **stack_b);
+void	reset_costs(t_stack **stack_a, t_stack **stack_b);
+void	find_b_tars(t_stack **stack_a, t_stack **stack_b);
+long	get_b_diff(long num, long tar, long oldtar);
+
+/* algorithm_6.c */
+void	go_to_b(t_stack **stack_a, t_stack **stack_b);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);
