@@ -73,6 +73,6 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 		get_index(stack_a);
 		get_index(stack_b);
 		calc_cost_a(stack_a, stack_b);
-		rotate_b_unt(stack_b, max_num(stack_b));
 	}
+	back_to_a(stack_a, stack_b);
 }

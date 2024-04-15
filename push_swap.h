@@ -75,6 +75,7 @@ void	find_new_tar(t_stack **stack_a, t_stack **stack_b);
 
 /* algorithm_5.c */
 long	get_diff(long num, long tar, long oldtar);
+void	back_to_a(t_stack **stack_a, t_stack **stack_b);
 
 /* error_check.c */
 int	ft_checker(int argc, char **argv);
