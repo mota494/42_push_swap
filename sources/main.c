@@ -42,7 +42,6 @@ int	main(int argc, char **argv)
 		ft_populate_list(&start_a, argc, argv);
 	mainsort(&start_a, &start_b);
 	rotate_a_unt(&start_a, min_num(&start_a));
-	//ft_print_visualize(&start_a, &start_b);
 	mainfree(&start_a);
 	free(start_b);
 	return (0);

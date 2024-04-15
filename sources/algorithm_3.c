@@ -18,11 +18,8 @@ long	get_lowest_cost(t_stack **stack)
 	{
 		if (temp->cost == 1)
 			break ;
-		if (temp->cost <= min)
-		{
+		if (temp->cost < min)
 			min = temp->cost;
-			break;
-		}
 		temp = temp->next;
 	}
 	return (temp->content);
