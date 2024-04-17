@@ -4,7 +4,8 @@ int	rot_sim(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 {
 	if (get_rot(stack_a, num) == get_rot(stack_b, tar))
 	{
-		if (node_index(stack_a, num) == 0 && node_index(stack_b, tar))
+		if (node_index(stack_a, num) != 0 && node_index(stack_b, tar) 
+				!= 0)
 			return (1);
 	}
 	return (0);

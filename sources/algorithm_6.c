@@ -6,7 +6,7 @@ void	push_b_lowest_cost(t_stack **stack_a, t_stack **stack_b, long num)
 
 	tar = search_target(stack_b, num);
 	if (rot_sim(stack_a, stack_b, num, tar) == 1)
-		rot_both_unt(stack_a, stack_b, num, tar);
+		rot_both_unt(stack_b, stack_a, num, tar);
 	if (node_index(stack_b, num) != 0)
 		rotate_b_unt(stack_b, num);
 	if (node_index(stack_a, tar) != 0)

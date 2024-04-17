@@ -9,25 +9,35 @@ int	both_rot(t_stack **stack_a, t_stack **stack_b, long num, long target)
 
 long	get_lowest_cost(t_stack **stack)
 {
-	int	min;
+	int		min;
+	int		origmin;
+	long	cheapest;
 	t_stack	*temp;
 
-	min = (*stack)->cost;
+	min = 2147483647;
+	origmin = min;
 	temp = *stack;
-	while (temp)
+	while (temp != NULL)
 	{
 		if (temp->cost == 1)
-			break ;
-		if (temp->cost < min)
+			cheapest = temp->content;
+		else if (temp->cost < min)
+		{
 			min = temp->cost;
+			cheapest = temp->content;
+		}
+		else if (!temp->next && origmin == min)
+		{
+			cheapest = (*stack)->content;
+		}
 		temp = temp->next;
 	}
-	return (temp->content);
+	return (cheapest);
 }
 
 long	search_target(t_stack **stack, long num)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack;
 	while (temp)
@@ -41,12 +51,12 @@ long	search_target(t_stack **stack, long num)
 
 void	push_lowest_cost(t_stack **stack_a, t_stack **stack_b, long num)
 {
-	long tar;
+	long	tar;
 
 	tar = search_target(stack_a, num);
 	if (rot_sim(stack_a, stack_b, num, tar) == 1)
 	{
- 		rot_both_unt(stack_a, stack_b, num, tar);
+		rot_both_unt(stack_a, stack_b, num, tar);
 	}
 	if (node_index(stack_a, num) != 0)
 		rotate_a_unt(stack_a, num);
@@ -63,8 +73,8 @@ void	push_to_b(t_stack **stack_a, t_stack **stack_b)
 			push_b(stack_a, stack_b);
 		else
 		{
-			push_lowest_cost(stack_a, stack_b, 
-					get_lowest_cost(stack_a));
+			push_lowest_cost(stack_a, stack_b,
+				get_lowest_cost(stack_a));
 		}
 		find_new_tar(stack_a, stack_b);
 		get_index(stack_a);
