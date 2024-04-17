@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:22:07 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/04 12:59:02 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:39:43 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	swap_a(t_stack **stack_a, int print)
 	*stack_a = (*stack_a)->next;
 	(*stack_a)->next = temp;
 	(*stack_a)->next->next = next;
-	if (print == 1)	
+	if (print == 1)
 		ft_printf("sa\n");
 }
 

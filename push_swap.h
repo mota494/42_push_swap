@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:48:30 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/21 12:14:49 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:43:10 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 typedef struct s_stack
 {
-	long	content;
-	long	target;
-	int		index;
-	int		cost;
-	int		rot_to;
+	long				content;
+	long				target;
+	int					index;
+	int					cost;
+	int					rot_to;
 	struct s_stack		*next;
 }			t_stack;
 
@@ -90,12 +90,6 @@ int		already_sort(int argc, char **argv);
 int		ft_alldigit(int argc, char **argv);
 int		ft_doublenumber(int argc, char **argv);
 int		check_for_max(int argc, char **argv);
-
-/* extras.c */
-void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
-void	ft_printnode(t_stack *node);
-void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b);
-void	print_one_stack(t_stack **stack);
 
 /* main.c */
 void	mainfree(t_stack **start_a);

@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:00:02 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/20 12:20:46 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:40:11 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	}
 	ft_printf("pb\n");
 }
-

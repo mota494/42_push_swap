@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 12:51:19 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/21 10:14:02 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:41:13 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	num_elems(t_stack **stack)
 	count = 0;
 	temp = *stack;
 	if (!temp)
-		return(0);
+		return (0);
 	while (temp)
 	{
 		count++;
@@ -70,7 +70,7 @@ int	node_index(t_stack **stack, long num)
 	{
 		if (temp->content == num)
 		{
-			break;
+			break ;
 			return (count);
 		}
 		count++;
@@ -78,7 +78,6 @@ int	node_index(t_stack **stack, long num)
 	}
 	return (count);
 }
-
 
 int	relative_index(t_stack **stack, long num)
 {
@@ -91,7 +90,7 @@ int	relative_index(t_stack **stack, long num)
 	{
 		if (temp->content == num)
 		{
-			break;
+			break ;
 			return (count);
 		}
 		count++;

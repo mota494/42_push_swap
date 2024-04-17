@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:47:22 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/21 12:09:21 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:39:09 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	mainfree(t_stack **start_a)
 {
-	int i;
-	t_stack *old_node;
-	t_stack *temp;
-	
+	int		i;
+	t_stack	*old_node;
+	t_stack	*temp;
+
 	temp = *start_a;
 	i = num_elems(start_a);
 	while (i > 0)

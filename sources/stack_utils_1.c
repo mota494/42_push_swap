@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 10:18:53 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/20 12:43:10 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:41:32 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ long	min_num(t_stack **stack)
 
 	temp = *stack;
 	min = temp->content;
-	while(temp)
+	while (temp)
 	{
 		if (temp->content < min)
 			min = temp->content;
@@ -43,4 +43,3 @@ long	min_num(t_stack **stack)
 	}
 	return (min);
 }
-
