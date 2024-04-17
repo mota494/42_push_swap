@@ -14,7 +14,7 @@
 
 void	first_target(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tempa;
+	t_stack	*tempa;
 	long	min;
 	long	max;
 
@@ -37,7 +37,7 @@ int	times_to_rot(t_stack **stack, long num)
 {
 	int	toret;
 
-	if (node_index(stack, num) <= num_elems(stack)/2)
+	if (node_index(stack, num) <= num_elems(stack) / 2)
 		toret = node_index(stack, num);
 	else
 		toret = num_elems(stack) - node_index(stack, num);
@@ -46,7 +46,7 @@ int	times_to_rot(t_stack **stack, long num)
 
 int	get_rot(t_stack **stack, long num)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack;
 	while (temp)
@@ -60,21 +60,21 @@ int	get_rot(t_stack **stack, long num)
 
 int	sim_rot(int costa, int costb)
 {
-	int sup;
+	int	sup;
 
 	sup = 0;
 	if (costa > costb)
 		sup = costa - costb;
 	else if (costb > costa)
 		sup = costb - costa;
-	return ((costa + costb)/2 + sup);
+	return ((costa + costb) / 2 + sup);
 }
 
 void	calc_cost_a(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *tempa;
-	int	costa;
-	int	costb;
+	t_stack	*tempa;
+	int		costa;
+	int		costb;
 
 	tempa = *stack_a;
 	while (tempa)
@@ -82,8 +82,8 @@ void	calc_cost_a(t_stack **stack_a, t_stack **stack_b)
 		costa = times_to_rot(stack_a, tempa->content);
 		costb = times_to_rot(stack_b, tempa->target);
 		tempa->cost = costa + costb;
-		if (both_rot(stack_a, stack_b, tempa->content, tempa->target) 
-				&& (costa > 0 && costb > 0))
+		if (both_rot(stack_a, stack_b, tempa->content, tempa->target)
+			&& (costa > 0 && costb > 0))
 			tempa->cost = sim_rot(costa, costb);
 		tempa = tempa->next;
 	}

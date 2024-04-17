@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:37:37 by mloureir          #+#    #+#             */
-/*   Updated: 2023/12/21 12:08:58 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:28:16 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	ft_print_visualize(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("\n\n[Stack A]\n");
 	while (tempa)
 	{
-		ft_printf("❨ %d (%d | %d)❩➛", tempa->content, tempa->target, 
-				tempa->cost);
+		ft_printf("❨ %d (%d | %d)❩➛", tempa->content, tempa->target,
+				  tempa->cost);
 		tempa = tempa->next;
 	}
 	ft_printf("❨ NULL ❩\n");

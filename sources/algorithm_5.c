@@ -6,7 +6,7 @@
 /*   By: mloureir <mloureir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 14:01:20 by mloureir          #+#    #+#             */
-/*   Updated: 2024/04/15 14:01:21 by mloureir         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:23:10 by mloureir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ long	get_diff(long num, long tar, long oldtar)
 	return (-1);
 }
 
-void	reset_costs(t_stack **stack_a ,t_stack **stack_b)
+void	reset_costs(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack_b;
 	while (temp)
@@ -59,22 +59,22 @@ long	get_b_diff(long num, long tar, long oldtar)
 
 void	find_b_tars(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *temp_a;
-	t_stack *temp_b;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	temp_b = *stack_b;
 	while (temp_b)
 	{
 		temp_a = *stack_a;
-		if (temp_b->content > max_num(stack_a) || temp_b->content < 
-				min_num(stack_a))
+		if (temp_b->content > max_num(stack_a) || temp_b->content < min_num
+			(stack_a))
 			temp_b->target = min_num(stack_a);
 		else
 		{
 			while (temp_a)
 			{
-				temp_b->target = get_b_diff(temp_b->content, 
-						temp_a->content, 
+				temp_b->target = get_b_diff(temp_b->content,
+						temp_a->content,
 						temp_b->target);
 				temp_a = temp_a->next;
 			}
@@ -85,8 +85,8 @@ void	find_b_tars(t_stack **stack_a, t_stack **stack_b)
 
 void	back_to_a(t_stack **stack_a, t_stack **stack_b)
 {
-	ft_sort_three(stack_a);	
-	reset_costs(stack_a ,stack_b);
+	ft_sort_three(stack_a);
+	reset_costs(stack_a, stack_b);
 	find_b_tars(stack_a, stack_b);
 	get_index(stack_a);
 	get_index(stack_b);

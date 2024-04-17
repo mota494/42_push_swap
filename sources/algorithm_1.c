@@ -73,16 +73,16 @@ void	algo_start(t_stack **stack_a, t_stack **stack_b)
 
 void	get_index(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = *stack;
-	while(temp)
+	while (temp)
 	{
 		temp->index = node_index(stack, temp->content);
-			if (temp->index <= (num_elems(stack)/2))
-				temp->rot_to = 1;
-			else
-				temp->rot_to = 0;
+		if (temp->index <= (num_elems(stack) / 2))
+			temp->rot_to = 1;
+		else
+			temp->rot_to = 0;
 		if (num_elems(stack) <= 2)
 			temp->rot_to = 1;
 		temp = temp->next;

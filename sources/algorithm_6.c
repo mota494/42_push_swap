@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm_6.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/17 14:54:26 by mloureir          #+#    #+#             */
+/*   Updated: 2024/04/17 15:27:17 by mloureir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 void	push_b_lowest_cost(t_stack **stack_a, t_stack **stack_b, long num)
 {
-	long tar;
+	long	tar;
 
 	tar = search_target(stack_b, num);
 	if (rot_sim(stack_a, stack_b, num, tar) == 1)
@@ -22,14 +34,12 @@ void	go_to_b(t_stack **stack_a, t_stack **stack_b)
 			push_a(stack_a, stack_b);
 		else
 		{
-			push_b_lowest_cost(stack_a, stack_b, 
-					get_lowest_cost(stack_b));
-			
+			push_b_lowest_cost(stack_a, stack_b, get_lowest_cost(stack_b));
 		}
 		find_b_tars(stack_a, stack_b);
 		get_index(stack_a);
 		get_index(stack_b);
-		calc_cost_a(stack_b, stack_a);	
+		calc_cost_a(stack_b, stack_a);
 	}
 }
 

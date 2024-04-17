@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm_4.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mloureir <mloureir@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/17 13:57:08 by mloureir          #+#    #+#             */
+/*   Updated: 2024/04/17 15:21:37 by mloureir         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
 int	rot_sim(t_stack **stack_a, t_stack **stack_b, long num, long tar)
 {
 	if (get_rot(stack_a, num) == get_rot(stack_b, tar))
 	{
-		if (node_index(stack_a, num) != 0 && node_index(stack_b, tar) 
-				!= 0)
+		if (node_index(stack_a, num) != 0 && node_index(stack_b, tar)
+			!= 0)
 			return (1);
 	}
 	return (0);
@@ -69,16 +81,16 @@ void	find_new_tar(t_stack **stack_a, t_stack **stack_b)
 	while (temp_a)
 	{
 		temp_b = *stack_b;
-		if (temp_a->content > max_num(stack_b) || temp_a->content < 
-				min_num(stack_b))
+		if (temp_a->content > max_num(stack_b) || temp_a->content < min_num
+			(stack_b))
 			temp_a->target = max_num(stack_b);
 		else
 		{
 			while (temp_b)
 			{
-				temp_a->target = get_diff(temp_a->content, 
-						temp_b->content, 
-						temp_a->target); 
+				temp_a->target = get_diff(temp_a->content,
+						temp_b->content,
+						temp_a->target);
 				temp_b = temp_b->next;
 			}
 		}
