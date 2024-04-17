@@ -32,3 +32,26 @@ void	go_to_b(t_stack **stack_a, t_stack **stack_b)
 		calc_cost_a(stack_b, stack_a);	
 	}
 }
+
+void	org4(t_stack **stack_a, t_stack **stack_b)
+{
+	push_b(stack_a, stack_b);
+	ft_sort_three(stack_a);
+	if ((*stack_b)->content < min_num(stack_a))
+		push_a(stack_a, stack_b);
+	else if ((*stack_b)->content > max_num(stack_a))
+		push_a(stack_a, stack_b);
+	else
+	{
+		if ((*stack_b)->content > (*stack_a)->next->content)
+		{
+			rotate_a_unt(stack_a, max_num(stack_a));
+			push_a(stack_a, stack_b);
+		}
+		else
+		{
+			rotate_a(stack_a, 1);
+			push_a(stack_a, stack_b);
+		}
+	}
+}

@@ -19,27 +19,30 @@ int	ft_checker(int argc, char **argv)
 	i = ft_doublenumber(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("ERROR!");
+		ft_printf("Error\n");
 		return (i);
 	}
 	i = ft_alldigit(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("ERROR!");
+		ft_printf("Error\n");
 		return (i);
 	}
 	i = already_sort(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("Already sorted");
+		ft_printf("Error\n");
 		return (i);
 	}
+	i = check_for_max(argc, argv);
+	if (i == 0)
+		ft_printf("Error\n");
 	return (i);
 }
 
 int	already_sort(int argc, char **argv)
 {
-	int	i;
+	int		i;
 	long	curnum;
 
 	i = 2;
@@ -98,6 +101,20 @@ int	ft_doublenumber(int argc, char **argv)
 				return (0);
 			y++;
 		}
+		i++;
+	}
+	return (1);
+}
+
+int	check_for_max(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (i < argc)
+	{
+		if (ft_atoi(argv[i]) >= 2147483647 || ft_atoi(argv[i]) <= -2147483648)
+			return (0);
 		i++;
 	}
 	return (1);

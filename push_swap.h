@@ -82,12 +82,14 @@ long	get_b_diff(long num, long tar, long oldtar);
 
 /* algorithm_6.c */
 void	go_to_b(t_stack **stack_a, t_stack **stack_b);
+void	org4(t_stack **stack_a, t_stack **stack_b);
 
 /* error_check.c */
 int		ft_checker(int argc, char **argv);
 int		already_sort(int argc, char **argv);
 int		ft_alldigit(int argc, char **argv);
 int		ft_doublenumber(int argc, char **argv);
+int		check_for_max(int argc, char **argv);
 
 /* extras.c */
 void	ft_printstack(t_stack **stack_a, t_stack **stack_b);
