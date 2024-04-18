@@ -31,7 +31,6 @@ int	ft_checker(int argc, char **argv)
 	i = already_sort(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("Error\n");
 		return (i);
 	}
 	i = check_for_max(argc, argv);
@@ -113,7 +112,7 @@ int	check_for_max(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (ft_atoi(argv[i]) >= 2147483647 || ft_atoi(argv[i]) <= -2147483648)
+		if (ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648)
 			return (0);
 		i++;
 	}
