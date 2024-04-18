@@ -21,6 +21,7 @@ t_stack	*ft_add_node(int num)
 		return (NULL);
 	new_node->content = num;
 	new_node->next = NULL;
+	new_node->rot_to = 0;
 	return (new_node);
 }
 
