@@ -29,12 +29,29 @@ void	mainfree(t_stack **start_a)
 	}
 }
 
+void	start_struct(t_stack **stack_a)
+{
+	t_stack	*temp;
+
+	temp = *stack_a;
+	while (temp)
+	{
+		temp->rot_to = 0;
+		temp = temp->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*start_a;
 	t_stack	*start_b;
 
-	if (argc < 2 || ft_checker(argc, argv) == 0)
+	if (argc < 2 || check_all_signals(argc, argv) == 0)
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
+	if (ft_checker(argc, argv) == 0)
 		return (0);
 	start_a = ft_add_node(ft_atoi(argv[1]));
 	start_b = NULL;

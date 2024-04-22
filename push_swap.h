@@ -91,6 +91,9 @@ int		ft_alldigit(int argc, char **argv);
 int		ft_doublenumber(int argc, char **argv);
 int		check_for_max(int argc, char **argv);
 
+/* error_check_2.c */
+int		check_all_signals(int argc, char **argv);
+
 /* main.c */
 void	mainfree(t_stack **start_a);
 int		main(int argc, char **argv);

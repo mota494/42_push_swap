@@ -19,13 +19,13 @@ int	ft_checker(int argc, char **argv)
 	i = ft_doublenumber(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (i);
 	}
 	i = ft_alldigit(argc, argv);
 	if (i == 0)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		return (i);
 	}
 	i = already_sort(argc, argv);
@@ -35,7 +35,7 @@ int	ft_checker(int argc, char **argv)
 	}
 	i = check_for_max(argc, argv);
 	if (i == 0)
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 	return (i);
 }
 
