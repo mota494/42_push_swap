@@ -42,6 +42,7 @@ void	rot_both_unt(t_stack **a, t_stack **b, long num, long tar)
 			reverse_rrr(a, b);
 		}
 	}
+	get_index(a);
 }
 
 void	rotate_a_unt(t_stack **stack_a, long num)

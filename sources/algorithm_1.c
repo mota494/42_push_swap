@@ -41,6 +41,7 @@ void	ft_sort_three(t_stack **stack_a)
 	}
 	if (ft_check_sort(stack_a) == 0)
 		swap_a(stack_a, 1);
+	get_index(stack_a);
 }
 
 void	mainsort(t_stack **stack_a, t_stack **stack_b)
